@@ -1,72 +1,38 @@
-\# Документація API
+# Документація проекту
 
-\## Модуль Calculator
+## Модуль greetings
 
-\### Функція add()
+### Функція greet_user(name)
+```python
+def greet_user(name):
+    """Виводить персоналізоване привітання для користувача."""
+    from datetime import datetime
+    time = datetime.now().strftime("%H:%M:%S")
+    print(f"Hello, {name}! Current time: {time}")
+Приклад:
+greet_user("Anna")
+# Виведе: Hello, Anna! Current time: 10:22:37
+Функція greet_from_file(filename)
+def greet_from_file(filename):
+    """Зчитує імена з файлу та вітає кожного користувача."""
+    from datetime import datetime
+    with open(filename, "r", encoding="utf-8") as f:
+        names = [line.strip() for line in f if line.strip()]
+    time = datetime.now().strftime("%H:%M:%S")
+    for name in names:
+        print(f"Hello, {name}! Current time: {time}")
+Приклад:
 
-``````python
+greet_from_file("data/names.txt")
+# Виведе:
+# Hello, Anna! Current time: 10:22:37
+# Hello, Petro! Current time: 10:22:37
+# Hello, Maria! Current time: 10:22:37
 
-def add(a, b):
+---
 
-&nbsp;"""Додавання двох чисел"""
+Щоб додати посилання на `DOCUMENTATION.md` у `README.md`, у відповідному місці напиши:
 
-&nbsp;return a + b
-
-``````
-
-\*\*Параметри:\*\*
-
-\- `a` (float): Перше число
-
-\- `b` (float): Друге число
-
-\*\*Повертає:\*\*
-
-\- `float`: Сума двох чисел
-
-\*\*Приклад:\*\*
-
-``````python
-
-result = add(5, 3)
-
-print(result) # Виведе: 8
-
-``````
-
-\### Функція divide()
-
-``````python
-
-def divide(a, b):
-
-&nbsp;"""Ділення двох чисел"""
-
-&nbsp;if b != 0:
-
-&nbsp;return a / b
-
-&nbsp;else:
-
-&nbsp;return "Помилка: ділення на нуль!"
-
-``````
-
-\*\*Параметри:\*\*
-
-\- `a` (float): Ділене
-
-\- `b` (float): Дільник
-
-\*\*Повертає:\*\*
-
-\- `float`: Результат ділення, або помилка якщо b = 0
-
-\*\*Приклад:\*\*
-
-``````python
-
-result = divide(10, 2)
-
-print(result) # Виведе: 5.0
-
+```markdown
+## Документація
+Докладний опис функцій доступний у [DOCUMENTATION.md](DOCUMENTATION.md)
